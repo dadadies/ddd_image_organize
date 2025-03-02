@@ -39,3 +39,4 @@ This project is an image organizer application that uses LLMs (OpenAI, Google Ge
 *   Enhance accuracy in image identification and folder placement.
     Please be aware that the current LLM is not always accurate in identifying images and placing them in the appropriate folders. This is an area that needs further development.
     This project is being shared on GitHub to encourage contributions to improve this aspect of the project for the benefit of all.
+*   Implement a configuration/preference system.

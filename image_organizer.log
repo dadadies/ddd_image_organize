@@ -780,3 +780,35 @@ images = [f for f in os.listdir(current_directory)
     }
   ]
 }
+2025-03-02 14:39:49,372 - INFO - LLM Analysis: ```json
+{
+  "folders": [
+    {
+      "name": "nature",
+      "images": [
+        "2010-11-21-full-moon-1000.png",
+        "21663397742_10c834c71e_c.jpg",
+        "Amazing-StonesMinerals6__880.jpg"
+      ]
+    },
+    {
+      "name": "buildings",
+      "images": [
+        "3.jpg",
+        "a13052540ed9f27eea7d611e9e33293fea9fb4aa584c029e80036f5f857f03de.webp"
+      ]
+    },
+    {
+      "name": "people",
+      "images": [
+        "56ba49e41a00002d00ab2507.jpeg",
+        "9.jpg",
+        "A18854731D6DC617F6CC1F7245330D69B6159E18444E7A3E8C9589468ABB02D8.jpg",
+        "A1897E5E85B488FDE84BB77AE42E97B7778AE8CAC745860766931D266FDE4FE0.jpg",
+        "Bing_0056.jpeg",
+        "NavalSquare.jpg"
+      ]
+    }
+  ]
+}
+```

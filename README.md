@@ -1,4 +1,4 @@
-# Image Organizer
+# ddd_image_organize
 
 This project is an image organizer application that uses LLMs (OpenAI, Google Gemini, or local models) to automatically categorize images into folders based on their content.
 

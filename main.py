@@ -117,7 +117,7 @@ class MainWindow(QMainWindow):
             elif llm_choice == "Google Gemini":
                 gemini_api_key = self.ui.api_key_input.text()
                 if gemini_api_key == "":
-                    gemini_api_key = "AIzaSyBocVUGeKy3MK4Vj-rXsvx5HUxc_PtNDH8"
+                    gemini_api_key = ""
                 genai.configure(api_key=gemini_api_key)
 
                 client = genai.GenerativeModel('gemini-2.0-flash')

@@ -2,7 +2,7 @@
 
 ## 1. Introduction
 
-A Windows 11 software application with a UI that allow the user to provide images to a large language model (LLM) with vision capabilities, either online or local, to analyze the images and detail how to organize the images into appropriate folders based on what catogories it determines for each image, and return a Json structure with the final files and the folders. The program will use this infirmation to perform the task.
+A Windows 11 software application with a UI that allow the user to provide images to a large language model (LLM) with vision capabilities, either online or local, to analyze the images and detail how to organize the images into appropriate folders based on what what is depicted in the images, and return a Json structure with the final files and the folders. The program will use this infirmation to perform the task.
 
 ## 3. Tools Used
 

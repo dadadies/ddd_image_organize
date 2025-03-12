@@ -16,7 +16,7 @@ import json
 import io
 
 def generate_llm_prompt(command, image_data_string):
-    return f"Analyze the following command: '{command}'. Analyze the following images:\\n{image_data_string}\\nProvide instructions on how to organize the images into folders based on their content. The possible folders are: 'people', 'buildings', 'animals', 'nature', 'cars', and 'other'. The response should include a JSON object with the following format:\\n\\n{{\\n  \"folders\": [\\n    {{\\n      \"name\": \"folder_name\",\\n      \"images\": [\"image1.jpg\", \"image2.jpg\"]\\n    }}\\n  ]\\n}}\\n\\nEach object in the 'folders' array should have a 'name' key representing the folder name and an 'images' key representing an array of the actual image filenames (including their extensions) to be moved to that folder. The code should create the folders if they don't exist. Do not use hardcoded paths. Use the 'move_file' function defined in the 'file_manager' module to move the files. Use os.path.join to construct file paths. Ensure the generated JSON is valid and does not contain syntax errors. The 'file_manager' module contains the function 'move_file(source, destination)' which moves a file from the source path to the destination path. The current working directory is '{os.getcwd()}'. Return ONLY a JSON object."
+    return f"You are an expert image organizer with access to vision capabilities. Analyze the following command: '{command}'. Analyze the following images:\\n{image_data_string}\\nProvide instructions on how to organize the images into folders based on their content. The response should include a JSON object with the following format:\\n\\n{{\\n  \"folders\": [\\n    {{\\n      \"name\": \"folder_name\",\\n      \"images\": [\"image1.jpg\", \"image2.jpg\"]\\n    }}\\n  ]\\n}}\\n\\nEach object in the 'folders' array should have a 'name' key representing the folder name and an 'images' key representing an array of the actual image filenames (including their extensions) to be moved to that folder. The code should create the folders if they don't exist. Do not use hardcoded paths. Use the 'move_file' function defined in the 'file_manager' module to move the files. Use os.path.join to construct file paths. Ensure the generated JSON is valid and does not contain syntax errors. The 'file_manager' module contains the function 'move_file(source, destination)' which moves a file from the source path to the destination path. The current working directory is '{os.getcwd()}'. Return ONLY a JSON object."
 
 def get_image_files(directory):
     image_files = []
@@ -74,11 +74,12 @@ class MainWindow(QMainWindow):
                     max_tokens=350
                 )
                 analysis = response.choices[0].message.content.strip()
-                logging.info(f"LLM Analysis: {analysis}")
-                self.ui.progress_text.append(f"LLM Analysis: {analysis}")
+                logging.info(f"OpenAI LLM Analysis: {analysis}")
+                self.ui.progress_text.append(f"OpenAI LLM Analysis: {analysis}")
 
                 # Parse the JSON object and execute the instructions
                 try:
+                    logging.info("Attempting to parse JSON from OpenAI response")
                     import json
                     import re
                     # Find the JSON object within the response
@@ -146,12 +147,13 @@ class MainWindow(QMainWindow):
 
                 response = client.generate_content(contents)
                 analysis = response.text
-                logging.info(f"LLM Analysis: {analysis}")
-                self.ui.progress_text.append(f"LLM Analysis: {analysis}")
-                print(f"LLM Analysis: {analysis}")
+                logging.info(f"Gemini LLM Analysis: {analysis}")
+                self.ui.progress_text.append(f"Gemini LLM Analysis: {analysis}")
+                print(f"Gemini LLM Analysis: {analysis}")
 
                 # Parse the JSON object and execute the instructions
                 try:
+                    logging.info("Attempting to parse JSON from Gemini response")
                     import json
                     import re
                     # Find the JSON object within the response
@@ -162,9 +164,18 @@ class MainWindow(QMainWindow):
                         json_string = json_string.replace('""', '","').replace('\\n', '').replace('" "', '","')
                         try:
                             instructions = json.loads(json_string)
+                            logging.info(f"Gemini JSON parsed successfully: {instructions}")
                         except json.JSONDecodeError as e:
-                            logging.error(f"JSONDecodeError: {e}")
-                            logging.error(f"Failed to parse JSON: {json_string}")
+                            logging.warning(f"JSONDecodeError: {e}")
+                            logging.warning(f"Failed to parse JSON with standard json.loads, attempting alternative parsing...")
+                            try:
+                                # Attempt to fix common JSON errors and parse again
+                                json_string = json_string.replace('""', '","').replace('\\n', '').replace('" "', '","')
+                                instructions = json.loads(json_string)
+                                logging.info("Successfully parsed JSON with alternative parsing.")
+                            except json.JSONDecodeError as e2:
+                                logging.error(f"JSONDecodeError: {e2}")
+                                logging.error(f"Failed to parse JSON: {json_string}")
                             raise
                     else:
                         raise ValueError("No JSON object found in LLM response")
@@ -222,11 +233,12 @@ class MainWindow(QMainWindow):
                         self.ui.progress_text.append(f"Error parsing LM Studio response: {e}")
                         return
 
-                    logging.info(f"LLM Analysis: {analysis}")
-                    self.ui.progress_text.append(f"LLM Analysis: {analysis}")
+                    logging.info(f"LM Studio LLM Analysis: {analysis}")
+                    self.ui.progress_text.append(f"LM Studio LLM Analysis: {analysis}")
 
                     # Parse the JSON object and execute the instructions
                     try:
+                        logging.info("Attempting to parse JSON from LM Studio response")
                         import json
                         import re
                         # Find the JSON object within the response
@@ -235,6 +247,7 @@ class MainWindow(QMainWindow):
                             json_string = match.group(0)
                             try:
                                 instructions = json.loads(json_string)
+                                logging.info(f"LM Studio JSON parsed successfully: {instructions}")
                             except json.JSONDecodeError as e:
                                 logging.error(f"JSONDecodeError: {e}")
                                 logging.error(f"Failed to parse JSON: {json_string}")
@@ -271,6 +284,7 @@ class MainWindow(QMainWindow):
                             json_string = match.group(0)
                             try:
                                 instructions = json.loads(json_string)
+                                logging.info(f"Local LLM JSON parsed successfully: {instructions}")
                             except json.JSONDecodeError as e:
                                 logging.error(f"JSONDecodeError: {e}")
                                 logging.error(f"Failed to parse JSON: {json_string}")
@@ -307,9 +321,17 @@ class MainWindow(QMainWindow):
                             try:
                                 instructions = json.loads(json_string)
                             except json.JSONDecodeError as e:
-                                logging.error(f"JSONDecodeError: {e}")
-                                logging.error(f"Failed to parse JSON: {json_string}")
-                                raise
+                                logging.warning(f"JSONDecodeError: {e}")
+                                logging.warning(f"Failed to parse JSON with standard json.loads, attempting alternative parsing...")
+                                try:
+                                    # Attempt to fix common JSON errors and parse again
+                                    json_string = json_string.replace('""', '","').replace('\\n', '').replace('" "', '","')
+                                    instructions = json.loads(json_string)
+                                    logging.info("Successfully parsed JSON with alternative parsing.")
+                                except json.JSONDecodeError as e2:
+                                    logging.error(f"JSONDecodeError: {e2}")
+                                    logging.error(f"Failed to parse JSON: {json_string}")
+                                    raise
                         else:
                             raise ValueError("No JSON object found in LLM response")
 
@@ -376,11 +398,12 @@ class MainWindow(QMainWindow):
 
                     response = llm(prompt, max_tokens=350, stop=["\\n"], echo=False)
                     analysis = response["choices"][0]["text"].strip()
-                    logging.info(f"LLM Analysis: {analysis}")
-                    self.ui.progress_text.append(f"LLM Analysis: {analysis}")
+                    logging.info(f"Local LLM Analysis: {analysis}")
+                    self.ui.progress_text.append(f"Local LLM Analysis: {analysis}")
 
                     # Parse the JSON object and execute the instructions
                     try:
+                        logging.info("Attempting to parse JSON from Local LLM response")
                         import json
                         import re
                         # Find the JSON object within the response

@@ -14,8 +14,9 @@ A Windows 11 image organizer application that uses LLMs (OpenAI, Google Gemini, 
 ## Usage
 
 1.  Clone the repository.
-2.  Install the required dependencies (e.g., `pip install -r requirements.txt`).
-3.  Run the application (`python main.py`).
+2.  Ensure Python is installed on your system.
+3.  Install the required dependencies (e.g., `pip install -r requirements.txt`).
+4.  Run the application (`python main.py`).
 4.  Upload images using the "Upload Images" button.
 5.  Select a directory to organize the images into.
 6.  Choose an LLM (OpenAI, Google Gemini, Local, or LM Studio (Local and LM Studio are supposed to be local as they are both local but for now they are seperate)).

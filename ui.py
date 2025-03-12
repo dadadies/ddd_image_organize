@@ -40,17 +40,17 @@ class UI(QWidget):
         self.command_input.setPlaceholderText("Enter Prompt")
         layout.addWidget(self.command_input)
 
-        self.organize_button = QPushButton("Organize")
-        self.organize_button.clicked.connect(self.on_organize_clicked)
-        layout.addWidget(self.organize_button)
+        self.upload_button = QPushButton("Upload Images")
+        self.upload_button.clicked.connect(self.on_upload_clicked)
+        layout.addWidget(self.upload_button)
 
         self.progress_text = QTextEdit()
         self.progress_text.setReadOnly(True)
         layout.addWidget(self.progress_text)
 
-        self.upload_button = QPushButton("Upload Images")
-        self.upload_button.clicked.connect(self.on_upload_clicked)
-        layout.addWidget(self.upload_button)
+        self.organize_button = QPushButton("Organize")
+        self.organize_button.clicked.connect(self.on_organize_clicked)
+        layout.addWidget(self.organize_button)
         self.setLayout(layout)
 
     def on_local_llm_model_path_changed(self, text):

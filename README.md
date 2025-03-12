@@ -17,13 +17,13 @@ A Windows 11 image organizer application that uses LLMs (OpenAI, Google Gemini, 
 2.  Ensure Python is installed on your system.
 3.  Install the required dependencies (e.g., `pip install -r requirements.txt`).
 4.  Run the application (`python main.py`).
-4.  Upload images using the "Upload Images" button.
-5.  Select a directory to organize the images into.
-6.  Choose an LLM (OpenAI, Google Gemini, Local, or LM Studio (Local and LM Studio are supposed to be local as they are both local but for now they are seperate)).
+5.  Choose an LLM (OpenAI, Google Gemini, Local, or LM Studio (Local and LM Studio are supposed to be local as they are both local but for now they are seperate)).
     If using LM Studio, provide the `0.json` file to LM Studio's structured output option, to help it provide a structured JSON output. Ensure LM Studio is running and the model is loaded. The program will attempt to connect to LM Studio at http://127.0.0.1:1234/v1/chat/completions.
     If using a generic local model ("Local"), provide the path to the local LLM model file in the "Enter Local LLM Model Path" text box.
     If using OpenAI or Google Gemini, enter your API key.
-7.  Click the "Organize Images" button.
+6.  Select a directory to organize the images into.
+7.  Upload images using the "Upload Images" button.
+8.  Click the "Organize Images" button.
 
 ## Dependencies
 

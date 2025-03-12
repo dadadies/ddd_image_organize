@@ -40,6 +40,11 @@ A Windows 11 image organizer application that uses LLMs (OpenAI, Google Gemini, 
 ## Future Goals
 
 *   Improve compatibility with local and online LLMs/APIs.
-*   Enhance accuracy in image identification and folder placement.
-    The current LLM is not accurate in identifying images. This is an area that needs further development. I assume the issue is that the images are being uploaded to the LLMs incorrectly. This project is being shared on GitHub to encourage contributions to improve this aspect of the project.
 *   Implement a configuration/preference system.
+
+## Future Goals Fixed
+*   2025-3-12 - Enhance accuracy in image identification and folder placement.
+    The current LLM is not accurate in identifying images. This is an area that needs further development. I assume the issue is that the images are being uploaded to the LLMs incorrectly. This project is being shared on GitHub to encourage contributions to improve this aspect of the project.
+
+## Notes
+*   I no longer need teh halp. I need to figure out how to remove this respository. 

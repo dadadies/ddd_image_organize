@@ -34,10 +34,3 @@ The software should be compatible with both online and local LLMs.
 *   **Local LLMs:** Support running LLMs locally on the user's machine. Requires sufficient hardware resources and a compatible LLM implementation (e.g., llama.cpp). eg: LM Studio.
 
 The software should allow users to choose their preferred LLM and configure the necessary settings.
-
-## 7. Future Goals
-
-*   Improve compatibility with local and online LLMs/APIs.
-*   Enhance accuracy in image identification and folder placement.
-    The current LLM is not always accurate in identifying images and placing them in the appropriate folders. This is an area that needs further development.
-*   Implement a configuration/preference system.

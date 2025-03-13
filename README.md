@@ -30,10 +30,8 @@ A Windows 11 image organizer application that uses LLMs (OpenAI, Google Gemini, 
 
 *   Improve compatibility with local and online LLMs/APIs.
 *   Implement a configuration/preference system.
+*   Local LLM (using LM Studio) is not able to organize images, so need to fix it. However Google Gemini works great.
 
 ## Future Goals Fixed
 *   2025-3-12 - Enhance accuracy in image identification and folder placement.
     The current LLM is not accurate in identifying images. This is an area that needs further development. I assume the issue is that the images are being uploaded to the LLMs incorrectly. This project is being shared on GitHub to encourage contributions to improve this aspect of the project.
-
-## Notes
-*   I no longer need halp as everything works as I want it. I will remove this repositiory once I am sure I dont need it. It has helped me once when I corrupted my local instance.

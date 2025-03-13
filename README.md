@@ -28,9 +28,8 @@ A Windows 11 image organizer application that uses LLMs (OpenAI, Google Gemini, 
 
 ## Future Goals
 
-*   Improve compatibility with local and online LLMs/APIs.
+*   Local LLM (using LM Studio) is not able to organize images, so need to fix it. But Google Gemini works great.
 *   Implement a configuration/preference system.
-*   Local LLM (using LM Studio) is not able to organize images, so need to fix it. However Google Gemini works great.
 
 ## Future Goals Fixed
 *   2025-3-12 - Enhance accuracy in image identification and folder placement.

@@ -4,22 +4,15 @@ A Windows 11 image organizer application that uses LLMs (OpenAI, Google Gemini, 
 
 ![alt text](image.png)
 
-## Features
-
-*   Upload images
-*   Select a directory to organize images into
-*   Choose between OpenAI, Google Gemini, or a local LLM for image categorization
-*   Automatically categorize images into folders based on their content
-
 ## Usage
 
 1.  Clone the repository.
 2.  Ensure Python is installed on your system.
 3.  Install the required dependencies (e.g., `pip install -r requirements.txt`).
 4.  Run the application (`python main.py`).
-5.  Choose an LLM (OpenAI, Google Gemini, Local, or LM Studio (Local and LM Studio are supposed to be local as they are both local but for now they are seperate)).
-    If using LM Studio, provide the `0.json` file to LM Studio's structured output option, to help it provide a structured JSON output. Ensure LM Studio is running and the model is loaded. The program will attempt to connect to LM Studio at http://127.0.0.1:1234/v1/chat/completions.
-    If using a generic local model ("Local"), provide the path to the local LLM model file in the "Enter Local LLM Model Path" text box.
+5.  Choose an LLM with vision capability through an 'API' such as OpenAI, Google Gemini, LM Studio, or other Local options (Local and LM Studio are both local but for now they are seperate)).
+    If using LM Studio, provide the `0.json` file to LM Studio's structured output option, to help it provide a structured JSON output. Ensure LM Studio is running and a LLM with vision capability is loaded. The program will attempt to connect to LM Studio at http://127.0.0.1:1234/v1/chat/completions.
+    "Local" is not implemented. But otherwise you would provide the path to the local LLM model file in the "Enter Local LLM Model Path" text box.
     If using OpenAI or Google Gemini, enter your API key.
 6.  Select a directory to organize the images into.
 7.  Upload images using the "Upload Images" button.
@@ -33,10 +26,6 @@ A Windows 11 image organizer application that uses LLMs (OpenAI, Google Gemini, 
 *   google.generativeai
 *   llama\_cpp (for local LLM)
 
-## License
-
-[MIT](https://opensource.org/licenses/MIT)
-
 ## Future Goals
 
 *   Improve compatibility with local and online LLMs/APIs.
@@ -47,4 +36,4 @@ A Windows 11 image organizer application that uses LLMs (OpenAI, Google Gemini, 
     The current LLM is not accurate in identifying images. This is an area that needs further development. I assume the issue is that the images are being uploaded to the LLMs incorrectly. This project is being shared on GitHub to encourage contributions to improve this aspect of the project.
 
 ## Notes
-*   I no longer need teh halp. I need to figure out how to remove this respository. 
+*   I no longer need teh halp as everything works as I want it. I will remove this repositiory once I am sure I dont need it. It has helped me once when I corrupted my local instance.

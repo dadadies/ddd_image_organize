@@ -36,4 +36,4 @@ A Windows 11 image organizer application that uses LLMs (OpenAI, Google Gemini, 
     The current LLM is not accurate in identifying images. This is an area that needs further development. I assume the issue is that the images are being uploaded to the LLMs incorrectly. This project is being shared on GitHub to encourage contributions to improve this aspect of the project.
 
 ## Notes
-*   I no longer need teh halp as everything works as I want it. I will remove this repositiory once I am sure I dont need it. It has helped me once when I corrupted my local instance.
+*   I no longer need halp as everything works as I want it. I will remove this repositiory once I am sure I dont need it. It has helped me once when I corrupted my local instance.

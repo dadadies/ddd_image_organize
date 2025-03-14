@@ -1,6 +1,6 @@
 # ddd_image_organize
 
-A Windows 11 image organizer application that uses LLMs (OpenAI, Google Gemini, or local models) to automatically categorize images into folders based on what is depicted in the images.
+A Windows 11 image organizer application that uses LLMs, with vision capabilities, accessed through services like OpenAI, Google Gemini, and local interfaces like LM Studio and Ollama, to automatically categorize images into folders based on what is depicted in the images.
 
 ![alt text](image.png)
 
@@ -26,12 +26,15 @@ A Windows 11 image organizer application that uses LLMs (OpenAI, Google Gemini, 
 *   openai
 *   google.generativeai
 *   llama\_cpp (for local LLM)
+*   pillow
 
 ## Future Goals
 
-*   Local LLM (using LM Studio) is not able to process or organize images properly, so needs fixing. Google Gemini works great though.
+*   LM Studio is not able to process or organize images properly, so it needs fixing. Google Gemini and Ollana are working well.
+*   Handle greater amounts of images. This limitation might be more with the LLMs and interfaces rather then the program itself.
+*   Standardized Organization: Implement a feature to allow users to define a limited set of standard categories for image organization to avoid too many catogories. The prompt option may provide this guidance, but have yet to be tested.
 *   Implement a configuration/preference system.
 
 ## Future Goals Fixed
 *   2025-3-12 - Enhance accuracy in image identification and folder placement.
-    The current LLM is not accurate in identifying images. This is an area that needs further development. I assume the issue is that the images are being uploaded to the LLMs incorrectly. This project is being shared on GitHub to encourage contributions to improve this aspect of the project.
+    The current LLM is not accurate in identifying images. This is an area that needs further development. I assume the issue is that the images are being uploaded to the LLMs incorrectly. This project is being shared on GitHub to encourage contributions to improve this aspect of the project. [Fix: It was rigid prompting that was causing the LLM to be limited.]

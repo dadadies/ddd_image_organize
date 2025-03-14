@@ -30,9 +30,9 @@ A Windows 11 image organizer application that uses LLMs, with vision capabilitie
 
 ## Future Goals
 
-*   LM Studio is not able to process or organize images properly, so it needs fixing. Google Gemini and Ollana are working well.
-*   Handle greater amounts of images. This limitation might be more with the LLMs and interfaces rather then the program itself.
-*   Standardized Organization: Implement a feature to allow users to define a limited set of standard categories for image organization to avoid too many catogories. The prompt option may provide this guidance, but have yet to be tested.
+*   LM Studio is not able to process or organize images properly, so it needs fixing. Google Gemini and Ollama are working well.
+*   Handle greater amounts of images.
+*   Standardized Organization: Implement a feature to allow users to define a limited set of categories for image organization to avoid too many catogories. The prompt option may provide this guidance, but has yet to be tested.
 *   Implement a configuration/preference system.
 
 ## Future Goals Fixed

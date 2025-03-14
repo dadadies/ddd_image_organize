@@ -16,6 +16,7 @@ class UI(QWidget):
         self.llm_choice.addItem("Local")
         self.llm_choice.addItem("Google Gemini")
         self.llm_choice.addItem("LM Studio")
+        self.llm_choice.addItem("Ollama")
         layout.addWidget(self.llm_choice)
 
         self.api_key_input = QLineEdit()

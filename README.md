@@ -1,6 +1,6 @@
 # ddd_image_organize
 
-A Windows 11 image organizer application that uses LLMs, with vision capabilities, accessed through services like OpenAI, Google Gemini, and local interfaces like LM Studio and Ollama, to automatically categorize images into folders based on what is depicted in the images.
+A Windows 11 image organizer application that uses LLMs (through APIs: OpenAI, Google Gemini, LM Studio, Olama, etc) with vision capabilities to automatically categorize images into folders based on what is depicted in the images.
 
 ![alt text](image.png)
 

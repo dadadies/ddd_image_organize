@@ -1,0 +1,31 @@
+{
+    "type": "object",
+    "properties": {
+      "folders": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "Name of the folder"
+            },
+            "images": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "description": "Filename of the image"
+              }
+            }
+          },
+          "required": [
+            "name",
+            "images"
+          ]
+        }
+      }
+    },
+    "required": [
+      "folders"
+    ]
+  }

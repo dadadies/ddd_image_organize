@@ -1,0 +1,6 @@
+requests
+PyQt5
+openai
+google-generativeai
+llama-cpp-python
+pillow

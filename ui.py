@@ -23,6 +23,11 @@ class UI(QWidget):
         self.api_key_input.setPlaceholderText("Enter API Key")
         layout.addWidget(self.api_key_input)
 
+        self.local_llm_model_path_input = QLineEdit()
+        self.local_llm_model_path_input.setPlaceholderText("Enter Local LLM Model Path")
+        layout.addWidget(self.local_llm_model_path_input)
+        self.local_llm_model_path = ""
+        self.local_llm_model_path_input.textChanged.connect(self.on_local_llm_model_path_changed)
 
         self.directory_button = QPushButton("Select Directory")
         self.directory_button.clicked.connect(self.on_directory_clicked)
@@ -44,7 +49,6 @@ class UI(QWidget):
         self.progress_text.setReadOnly(True)
         layout.addWidget(self.progress_text)
 
-
         self.organize_button = QPushButton("Organize")
         self.organize_button.clicked.connect(self.on_organize_clicked)
         layout.addWidget(self.organize_button)
@@ -53,6 +57,9 @@ class UI(QWidget):
     def print_to_terminal(self, text):
         print(text)
         self.progress_text.append(text)
+
+    def on_local_llm_model_path_changed(self, text):
+        self.local_llm_model_path = text
 
     def on_upload_clicked(self):
         self.uploaded_images = []

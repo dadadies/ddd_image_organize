@@ -6009,3 +6009,173 @@ So the JSON should have one folder named "Greenery" with ["3.jpg"]. That's strai
 2025-06-13 19:24:56,019 - INFO - LLM JSON parsed successfully: {'folders': [{'name': 'Greenery', 'images': ['3.jpg']}]}
 2025-06-13 19:24:56,020 - DEBUG - Created folder: C:/Users/dadad/dadadies/development/ddd_image_organize/images\Greenery
 2025-06-13 19:24:56,022 - DEBUG - Moved 3.jpg to C:/Users/dadad/dadadies/development/ddd_image_organize/images\Greenery
+2025-06-13 21:50:51,363 - DEBUG - Using proactor: IocpProactor
+2025-06-13 21:50:51,371 - INFO - {"client": "<lmstudio.sync_api.Client object at 0x000002DB700B9990>", "event": "Websocket handling thread started", "thread_id": "Thread-1"}
+2025-06-13 21:50:51,372 - INFO - {"event": "Websocket handling task started", "ws_url": "ws://localhost:1234/llm"}
+2025-06-13 21:50:51,551 - DEBUG - connect_tcp.started host='localhost' port=1234 local_address=None timeout=5.0 socket_options=None
+2025-06-13 21:50:51,810 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x000002DB7298E7D0>
+2025-06-13 21:50:51,810 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-06-13 21:50:51,811 - DEBUG - send_request_headers.complete
+2025-06-13 21:50:51,811 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-06-13 21:50:51,811 - DEBUG - send_request_body.complete
+2025-06-13 21:50:51,811 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-06-13 21:50:51,815 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 101, b'Switching Protocols', [(b'Upgrade', b'websocket'), (b'Connection', b'Upgrade'), (b'Sec-WebSocket-Accept', b'c8Bh5eiAvhakLZ4KMe5H3NoI4tg=')])
+2025-06-13 21:50:51,816 - INFO - HTTP Request: GET ws://localhost:1234/llm "HTTP/1.1 101 Switching Protocols"
+2025-06-13 21:50:51,816 - DEBUG - {"event": "Websocket connected", "ws_url": "ws://localhost:1234/llm"}
+2025-06-13 21:50:51,819 - DEBUG - {"event": "Websocket authenticated", "json": {"success": true}, "ws_url": "ws://localhost:1234/llm"}
+2025-06-13 21:50:51,819 - INFO - {"event": "Websocket session established (ws://localhost:1234/llm)", "ws_url": "ws://localhost:1234/llm"}
+2025-06-13 21:50:51,819 - DEBUG - {"event": "Sending RPC request", "json": {"callId": 1, "endpoint": "listLoaded", "type": "rpcCall"}, "ws_url": "ws://localhost:1234/llm"}
+2025-06-13 21:50:51,820 - DEBUG - {"call_id": 1, "event": "Received RPC result", "json": {"callId": 1, "result": ["..."], "type": "rpcResult"}, "ws_url": "ws://localhost:1234/llm"}
+2025-06-13 21:50:51,821 - INFO - {"event": "Websocket handling task started", "ws_url": "ws://localhost:1234/embedding"}
+2025-06-13 21:50:51,995 - DEBUG - connect_tcp.started host='localhost' port=1234 local_address=None timeout=5.0 socket_options=None
+2025-06-13 21:50:52,247 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x000002DB7299E650>
+2025-06-13 21:50:52,248 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-06-13 21:50:52,248 - DEBUG - send_request_headers.complete
+2025-06-13 21:50:52,248 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-06-13 21:50:52,248 - DEBUG - send_request_body.complete
+2025-06-13 21:50:52,248 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-06-13 21:50:52,249 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 101, b'Switching Protocols', [(b'Upgrade', b'websocket'), (b'Connection', b'Upgrade'), (b'Sec-WebSocket-Accept', b'uiTwIYxtBeRiXdRqW8TltL8eY10=')])
+2025-06-13 21:50:52,250 - INFO - HTTP Request: GET ws://localhost:1234/embedding "HTTP/1.1 101 Switching Protocols"
+2025-06-13 21:50:52,250 - DEBUG - {"event": "Websocket connected", "ws_url": "ws://localhost:1234/embedding"}
+2025-06-13 21:50:52,251 - DEBUG - {"event": "Websocket authenticated", "json": {"success": true}, "ws_url": "ws://localhost:1234/embedding"}
+2025-06-13 21:50:52,251 - INFO - {"event": "Websocket session established (ws://localhost:1234/embedding)", "ws_url": "ws://localhost:1234/embedding"}
+2025-06-13 21:50:52,251 - DEBUG - {"event": "Sending RPC request", "json": {"callId": 1, "endpoint": "listLoaded", "type": "rpcCall"}, "ws_url": "ws://localhost:1234/embedding"}
+2025-06-13 21:50:52,255 - DEBUG - {"call_id": 1, "event": "Received RPC result", "json": {"callId": 1, "result": ["..."], "type": "rpcResult"}, "ws_url": "ws://localhost:1234/embedding"}
+2025-06-13 21:50:52,260 - DEBUG - {"event": "Connecting channel endpoint", "json": {"channelId": 1, "creationParameter": {"identifier": "m@q2_k", "loadConfigStack": {"layers": [{"config": {"fields": []}, "layerName": "apiOverride"}]}, "loadTtlMs": 3600000}, "endpoint": "getOrLoad", "type": "channelCreate"}, "ws_url": "ws://localhost:1234/llm"}
+2025-06-13 21:50:52,263 - DEBUG - Processing image: C:/Users/dadad/dadadies/development/ddd_image_organize/images\0.jpeg
+2025-06-13 21:50:52,266 - INFO - {"event": "Websocket handling task started", "ws_url": "ws://localhost:1234/files"}
+2025-06-13 21:50:52,448 - DEBUG - connect_tcp.started host='localhost' port=1234 local_address=None timeout=5.0 socket_options=None
+2025-06-13 21:50:52,700 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x000002DB729AE750>
+2025-06-13 21:50:52,701 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-06-13 21:50:52,701 - DEBUG - send_request_headers.complete
+2025-06-13 21:50:52,701 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-06-13 21:50:52,701 - DEBUG - send_request_body.complete
+2025-06-13 21:50:52,701 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-06-13 21:50:52,701 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 101, b'Switching Protocols', [(b'Upgrade', b'websocket'), (b'Connection', b'Upgrade'), (b'Sec-WebSocket-Accept', b'npKPQ2iUUNlUlQuElp2zxvP4zmY=')])
+2025-06-13 21:50:52,702 - INFO - HTTP Request: GET ws://localhost:1234/files "HTTP/1.1 101 Switching Protocols"
+2025-06-13 21:50:52,702 - DEBUG - {"event": "Websocket connected", "ws_url": "ws://localhost:1234/files"}
+2025-06-13 21:50:52,703 - DEBUG - {"event": "Websocket authenticated", "json": {"success": true}, "ws_url": "ws://localhost:1234/files"}
+2025-06-13 21:50:52,703 - INFO - {"event": "Websocket session established (ws://localhost:1234/files)", "ws_url": "ws://localhost:1234/files"}
+2025-06-13 21:50:52,703 - DEBUG - {"event": "Sending RPC request", "json": {"callId": 1, "endpoint": "uploadFileBase64", "parameter": {"...": "..."}, "type": "rpcCall"}, "ws_url": "ws://localhost:1234/files"}
+2025-06-13 21:50:52,715 - DEBUG - {"call_id": 1, "event": "Received RPC result", "json": {"callId": 1, "result": {"...": "..."}, "type": "rpcResult"}, "ws_url": "ws://localhost:1234/files"}
+2025-06-13 21:50:52,716 - DEBUG - Prepared image handle: FileHandle.from_dict({
+  "fileType": "image",
+  "identifier": "1749876652706 - 886.jpeg",
+  "name": "0.jpeg",
+  "sizeBytes": 88069,
+  "type": "file"
+})
+2025-06-13 21:50:52,716 - DEBUG - Full prompt sent to LLM: You are an expert image organizer with access to vision capabilities. 
+ Analyze the following command: ''. 
+ Provide instructions on how to organize the image '0.jpeg' into folders based on its content. 
+ The response should be a JSON object with the following format:
+
+{
+  "folders": [
+    {
+      "name": "folder_name",
+      "images": ["0.jpeg"]
+    }
+  ]
+}
+
+Each object in the 'folders' array should have a 'name' key representing the folder name and an 'images' key representing an array containing ONLY the filename '0.jpeg' (including its extension) to be moved to that folder. 
+Include only the filename of the image being processed in the 'images' array.
+Return ONLY a JSON object.
+
+2025-06-13 21:50:52,718 - DEBUG - {"event": "Connecting channel endpoint", "json": {"channelId": 2, "creationParameter": {"history": {"messages": [{"content": [{"text": "You are an expert image organizer with access to vision capabilities. \n Analyze the following command: ''. \n Provide instructions on how to organize the image '0.jpeg' into folders based on its content. \n The response should be a JSON object with the following format:\n\n{\n  \"folders\": [\n    {\n      \"name\": \"folder_name\",\n      \"images\": [\"0.jpeg\"]\n    }\n  ]\n}\n\nEach object in the 'folders' array should have a 'name' key representing the folder name and an 'images' key representing an array containing ONLY the filename '0.jpeg' (including its extension) to be moved to that folder. \nInclude only the filename of the image being processed in the 'images' array.\nReturn ONLY a JSON object.\n", "type": "text"}, {"fileType": "image", "identifier": "1749876652706 - 886.jpeg", "name": "0.jpeg", "sizeBytes": 88069, "type": "file"}], "role": "user"}]}, "modelSpecifier": {"query": {"identifier": "m@q2_k"}, "type": "query"}, "predictionConfigStack": {"layers": [{"config": {"fields": []}, "layerName": "apiOverride"}]}}, "endpoint": "predict", "type": "channelCreate"}, "ws_url": "ws://localhost:1234/llm"}
+2025-06-13 21:50:57,314 - DEBUG - Raw LLM response: <think>
+</think>
+
+{
+  "folders": [
+    {
+      "name": " portraits",
+      "images": ["0.jpeg"]
+    }
+  ]
+}
+2025-06-13 21:50:57,314 - INFO - Attempting to parse JSON from LLM response.
+2025-06-13 21:50:57,314 - INFO - LLM JSON parsed successfully: {'folders': [{'name': ' portraits', 'images': ['0.jpeg']}]}
+2025-06-13 21:50:57,315 - DEBUG - Created folder: C:/Users/dadad/dadadies/development/ddd_image_organize/images\ portraits
+2025-06-13 21:50:57,316 - DEBUG - Moved 0.jpeg to C:/Users/dadad/dadadies/development/ddd_image_organize/images\ portraits
+2025-06-13 21:50:57,316 - DEBUG - Processing image: C:/Users/dadad/dadadies/development/ddd_image_organize/images\3.jpg
+2025-06-13 21:50:57,317 - DEBUG - {"event": "Sending RPC request", "json": {"callId": 2, "endpoint": "uploadFileBase64", "parameter": {"...": "..."}, "type": "rpcCall"}, "ws_url": "ws://localhost:1234/files"}
+2025-06-13 21:50:57,323 - DEBUG - {"call_id": 2, "event": "Received RPC result", "json": {"callId": 2, "result": {"...": "..."}, "type": "rpcResult"}, "ws_url": "ws://localhost:1234/files"}
+2025-06-13 21:50:57,323 - DEBUG - Prepared image handle: FileHandle.from_dict({
+  "fileType": "image",
+  "identifier": "1749876657319 - 332.jpg",
+  "name": "3.jpg",
+  "sizeBytes": 16659,
+  "type": "file"
+})
+2025-06-13 21:50:57,323 - DEBUG - Full prompt sent to LLM: You are an expert image organizer with access to vision capabilities. 
+ Analyze the following command: ''. 
+ Provide instructions on how to organize the image '3.jpg' into folders based on its content. 
+ The response should be a JSON object with the following format:
+
+{
+  "folders": [
+    {
+      "name": "folder_name",
+      "images": ["3.jpg"]
+    }
+  ]
+}
+
+Each object in the 'folders' array should have a 'name' key representing the folder name and an 'images' key representing an array containing ONLY the filename '3.jpg' (including its extension) to be moved to that folder. 
+Include only the filename of the image being processed in the 'images' array.
+Return ONLY a JSON object.
+
+2025-06-13 21:50:57,323 - DEBUG - {"event": "Connecting channel endpoint", "json": {"channelId": 3, "creationParameter": {"history": {"messages": [{"content": [{"text": "You are an expert image organizer with access to vision capabilities. \n Analyze the following command: ''. \n Provide instructions on how to organize the image '3.jpg' into folders based on its content. \n The response should be a JSON object with the following format:\n\n{\n  \"folders\": [\n    {\n      \"name\": \"folder_name\",\n      \"images\": [\"3.jpg\"]\n    }\n  ]\n}\n\nEach object in the 'folders' array should have a 'name' key representing the folder name and an 'images' key representing an array containing ONLY the filename '3.jpg' (including its extension) to be moved to that folder. \nInclude only the filename of the image being processed in the 'images' array.\nReturn ONLY a JSON object.\n", "type": "text"}, {"fileType": "image", "identifier": "1749876657319 - 332.jpg", "name": "3.jpg", "sizeBytes": 16659, "type": "file"}], "role": "user"}]}, "modelSpecifier": {"query": {"identifier": "m@q2_k"}, "type": "query"}, "predictionConfigStack": {"layers": [{"config": {"fields": []}, "layerName": "apiOverride"}]}}, "endpoint": "predict", "type": "channelCreate"}, "ws_url": "ws://localhost:1234/llm"}
+2025-06-13 21:51:36,056 - DEBUG - Raw LLM response: <think>Okay, let's see. The user wants me to organize the image "3.jpg" into folders based on its content. First, I need to analyze what's in the image. The image shows a forest scene with lots of green ferns and trees. There are also some white flowers or plants scattered around. So the main elements here are nature, specifically a lush forest with ferns.
+
+Now, how should I categorize this? Since it's a nature scene, maybe folders like "Nature", "Forest", "Flora", or "Greenery". But the user wants specific folder names. Let me think of possible categories. The image has dense green vegetation, so "Lush Forest" could work. Alternatively, "Ferns and Flowers" since there are both ferns and white flowers. Another option is "Woodland Scenery" to capture the trees and forest floor.
+
+I need to pick one folder name that best represents the content. The image is predominantly green with ferns and trees, so maybe "Lush Green Forest" or "Forest Flora". Wait, but the user might prefer more concise names. Let's check common folder naming conventions. Maybe "Nature Scene" or "Greenery". But perhaps "Ferns in Woodland" to highlight both elements.
+
+Wait, the image has a lot of ferns and trees, so maybe "Woodland with Ferns" is accurate. Alternatively, "Forest Undergrowth" since the undergrowth is prominent here. Or "Lush Vegetation". Hmm. Let me decide on one that's descriptive but concise. "Lush Forest" seems good because it captures the density of the forest and the greenery. Alternatively, "Ferns and Trees" to specify both elements present.
+
+I think "Lush Forest" is a safe choice as it's broad enough but still specific. So the JSON would have a folder named "Lush Forest" with the image "3.jpg" in it. Let me make sure there are no other elements I'm missing. The image doesn't have animals or water, just plants and trees. So yes, "Lush Forest" fits.
+</think>
+{
+  "folders": [
+    {
+      "name": "Lush Forest",
+      "images": ["3.jpg"]
+    }
+  ]
+}
+2025-06-13 21:51:36,056 - INFO - Attempting to parse JSON from LLM response.
+2025-06-13 21:51:36,056 - INFO - LLM JSON parsed successfully: {'folders': [{'name': 'Lush Forest', 'images': ['3.jpg']}]}
+2025-06-13 21:51:36,057 - DEBUG - Created folder: C:/Users/dadad/dadadies/development/ddd_image_organize/images\Lush Forest
+2025-06-13 21:51:36,060 - DEBUG - Moved 3.jpg to C:/Users/dadad/dadadies/development/ddd_image_organize/images\Lush Forest
+2025-06-13 21:52:06,658 - DEBUG - {"event": "Disconnecting websocket session (ws://localhost:1234/files)", "ws_url": "ws://localhost:1234/files"}
+2025-06-13 21:52:06,660 - INFO - {"event": "Websocket demultiplexing task terminated.", "ws_url": "ws://localhost:1234/files"}
+2025-06-13 21:52:06,660 - INFO - {"event": "Websocket session disconnected (ws://localhost:1234/files)", "ws_url": "ws://localhost:1234/files"}
+2025-06-13 21:52:06,660 - INFO - {"event": "Websocket closed.", "ws_url": "ws://localhost:1234/files"}
+2025-06-13 21:52:06,661 - DEBUG - {"event": "Disconnecting websocket session (ws://localhost:1234/embedding)", "ws_url": "ws://localhost:1234/embedding"}
+2025-06-13 21:52:06,661 - DEBUG - response_closed.started
+2025-06-13 21:52:06,661 - DEBUG - response_closed.complete
+2025-06-13 21:52:06,661 - INFO - {"event": "Websocket task terminated", "ws_url": "ws://localhost:1234/files"}
+2025-06-13 21:52:06,662 - INFO - {"event": "Websocket demultiplexing task terminated.", "ws_url": "ws://localhost:1234/embedding"}
+2025-06-13 21:52:06,662 - INFO - {"event": "Websocket session disconnected (ws://localhost:1234/embedding)", "ws_url": "ws://localhost:1234/embedding"}
+2025-06-13 21:52:06,662 - INFO - {"event": "Websocket closed.", "ws_url": "ws://localhost:1234/embedding"}
+2025-06-13 21:52:06,662 - DEBUG - {"event": "Disconnecting websocket session (ws://localhost:1234/llm)", "ws_url": "ws://localhost:1234/llm"}
+2025-06-13 21:52:06,663 - DEBUG - response_closed.started
+2025-06-13 21:52:06,663 - DEBUG - response_closed.complete
+2025-06-13 21:52:06,663 - INFO - {"event": "Websocket task terminated", "ws_url": "ws://localhost:1234/embedding"}
+2025-06-13 21:52:06,663 - INFO - {"event": "Websocket demultiplexing task terminated.", "ws_url": "ws://localhost:1234/llm"}
+2025-06-13 21:52:06,664 - INFO - {"event": "Websocket closed.", "ws_url": "ws://localhost:1234/llm"}
+2025-06-13 21:52:06,664 - INFO - {"event": "Websocket session disconnected (ws://localhost:1234/llm)", "ws_url": "ws://localhost:1234/llm"}
+2025-06-13 21:52:06,664 - DEBUG - response_closed.started
+2025-06-13 21:52:06,664 - DEBUG - response_closed.complete
+2025-06-13 21:52:06,665 - INFO - {"event": "Websocket task terminated", "ws_url": "ws://localhost:1234/llm"}
+2025-06-13 21:52:06,665 - DEBUG - {"client": "<lmstudio.sync_api.Client object at 0x000002DB700B9990>", "event": "Terminating websocket thread due to exception", "thread_id": "Thread-1"}
+Traceback (most recent call last):
+  File "C:\Users\dadad\AppData\Local\Programs\Python\Python311\Lib\site-packages\lmstudio\_ws_impl.py", line 292, in _log_thread_execution
+    await never_set.wait()
+  File "C:\Users\dadad\AppData\Local\Programs\Python\Python311\Lib\asyncio\locks.py", line 213, in wait
+    await fut
+asyncio.exceptions.CancelledError: Cancelled by cancel scope 2db700baf50
+2025-06-13 21:52:06,701 - INFO - {"client": "<lmstudio.sync_api.Client object at 0x000002DB700B9990>", "event": "Websocket thread terminated", "thread_id": "Thread-1"}
